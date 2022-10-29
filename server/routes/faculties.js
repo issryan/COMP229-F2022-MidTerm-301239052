@@ -1,3 +1,4 @@
+//Ryan Arafeh 301239052
 // modules required for routing
 let express = require("express");
 let router = express.Router();
@@ -24,6 +25,9 @@ router.get("/", (req, res, next) => {
 
 //  GET the faculty Details page in order to add a new faculty
 router.get("/add", (req, res, next) => {});
+ejs.renderFile(__ + '/server/faculties/add.ejs', function(err, data) {    //added render code
+  console.log(err || data);
+});
 
 // POST process the faculty  Details page and create a new faculty  - CREATE
 router.post("/add", (req, res, next) => {
