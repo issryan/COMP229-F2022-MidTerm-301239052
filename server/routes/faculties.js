@@ -3,6 +3,7 @@
 let express = require("express");
 let router = express.Router();
 let mongoose = require("mongoose");
+const { create } = require("../models/faculties");
 const faculties = require("../models/faculties");
 
 // define the faculty model
@@ -25,16 +26,14 @@ router.get("/", (req, res, next) => {
 
 //  GET the faculty Details page in order to add a new faculty
 router.get("/add", (req, res, next) => {});
-ejs.renderFile(__ + '/server/faculties/add.ejs', function(err, data) {    //added render code
-  console.log(err || data);
-});
+res.render("views/faculties/add.ejs")
 
 // POST process the faculty  Details page and create a new faculty  - CREATE
 router.post("/add", (req, res, next) => {
-  /*****************
-   * ADD CODE HERE *
-   *****************/
+  faculty.create((this.name, faculties))
+ window.location.href = "/faculties"; //redirect to faculties
 });
+
 
 // GET the faculty  Details page in order to edit an existing faculty
 router.get("/:id", (req, res, next) => {
